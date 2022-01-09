@@ -1,4 +1,3 @@
-//
 //  ResultsModel.swift
 //  MyPersonality
 //

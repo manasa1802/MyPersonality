@@ -29,10 +29,19 @@ class ViewController: UIViewController {
     }
 
     @IBAction func optionSelected(_ sender: UIButton) {
-        myQuestionBrain.addScore(userChoice: sender.currentTitle!)
         
-//        Timer.init(timeInterval: 0.5, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
-        updateUI()
+        if myQuestionBrain.isLastQuestion(){
+//          load next viewcontroller
+            print("load results viewcontroller")
+//
+//            if let resultController = storyboard!.instantiateViewController(withIdentifier: "SomeID") as? ResultsViewController {
+//                present(resultController, animated: true, completion: nil)
+//            }
+        }else{
+            myQuestionBrain.addScore(userChoice: sender.currentTitle!)
+            updateUI()
+        }
+
     }
     
     @objc func updateUI(){

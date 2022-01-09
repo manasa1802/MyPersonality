@@ -33,7 +33,7 @@
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wm6-Oq-fbg">
                                         <rect key="frame" x="0.0" y="60" width="355" height="394"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -130,7 +130,7 @@
         <!--Results View Controller-->
         <scene sceneID="XgW-ns-qtv">
             <objects>
-                <viewController id="a1a-b1-aq2" customClass="ResultsViewController" customModule="MyPersonality" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SomeID" id="a1a-b1-aq2" customClass="ResultsViewController" customModule="MyPersonality" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MhT-S7-56u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

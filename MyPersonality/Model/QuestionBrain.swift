@@ -11,6 +11,7 @@ import Foundation
 struct QuestionBrain {
     var questionNum = 0
     var myScore = 0
+    var lastQuestion = false
     
     var myQuestions = [
     QuestionModel(question: " What time do you wake up?", op1: "9-10", op1Score: 10, op2: "10-11", op2Score: 40, op3: "6-7", op3Score: 20, op4: "7-8", op4Score: 30),
@@ -71,9 +72,15 @@ struct QuestionBrain {
         
         if questionNum < myQuestions.count-1{
             questionNum += 1
+            lastQuestion = false
         }else{
-            questionNum = 0
-            myScore = 0
+//            questionNum = 0
+//            myScore = 0
+            lastQuestion = true
         }
+    }
+    
+    func isLastQuestion() -> Bool{
+        return lastQuestion
     }
 }
