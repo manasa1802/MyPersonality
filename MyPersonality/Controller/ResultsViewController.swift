@@ -14,7 +14,11 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var startOverButton: UIButton!
     
-    var result : [ResultsModel] = []
+    
+    var score = ""
+    var name = ""
+    var desc = ""
+//    var result : [ResultsModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +26,16 @@ class ResultsViewController: UIViewController {
         startOverButton.setTitle("Start Over", for: .normal)
         startOverButton.layer.cornerRadius = 0.25
         
-        scoreLabel.text = ""
-        nameLabel.text = result[0].name
-        descriptionTextView.text = result[0].description
+        scoreLabel.text = score
+        nameLabel.text = name
+        descriptionTextView.text = desc
     }
 
     @IBAction func startOverButtonPressed(_ sender: UIButton) {
 //        start again
+        
+        
+        self.dismiss(animated: true, completion: nil)
+        
     }
 }

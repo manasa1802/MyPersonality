@@ -31,28 +31,32 @@ class ViewController: UIViewController {
     @IBAction func optionSelected(_ sender: UIButton) {
         
         if myQuestionBrain.isLastQuestion(){
-//          load next viewcontroller
-            print("load results viewcontroller")
-//
-//            if let resultController = storyboard!.instantiateViewController(withIdentifier: "SomeID") as? ResultsViewController {
-//                present(resultController, animated: true, completion: nil)
-//            }
+            //          load next viewcontroller
+            //          fetch the data to be displayed
+            let myResults = ResultsBrain(Score: myQuestionBrain.getMyScore())
+            let results = myResults.getInformationFor(score: myResults.Score)
+            
+//            load next VC
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "ResultVCID") as! ResultsViewController
+            nextViewController.score = "Score: \(myResults.Score)"
+            nextViewController.name = results.name
+            nextViewController.desc = results.description
+            self.present(nextViewController, animated:true, completion:nil)
+            
         }else{
             myQuestionBrain.addScore(userChoice: sender.currentTitle!)
             updateUI()
         }
-
     }
     
     @objc func updateUI(){
-        
         questionTextLabel.text = myQuestionBrain.getTitle()
         optionOneButton.setTitle(myQuestionBrain.getoptionOne(), for: .normal)
         optionTwoButton.setTitle(myQuestionBrain.getoptionTwo(), for: .normal)
         optionThreeButton.setTitle(myQuestionBrain.getoptionThree(), for: .normal)
         optionFourButton.setTitle(myQuestionBrain.getoptionFour(), for: .normal)
         scoreLabel.text = "Score: \(myQuestionBrain.getMyScore())"
-        
     }
 }
 
