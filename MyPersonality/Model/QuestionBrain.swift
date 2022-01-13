@@ -83,4 +83,9 @@ struct QuestionBrain {
     func isLastQuestion() -> Bool{
         return lastQuestion
     }
+    
+    mutating func setNewQuestion(){
+        questionNum = 0
+        lastQuestion = false
+    }
 }

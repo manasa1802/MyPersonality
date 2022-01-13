@@ -14,6 +14,7 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var startOverButton: UIButton!
     
+    var myQuestionBrain = QuestionBrain()
     
     var score = ""
     var name = ""
@@ -29,13 +30,14 @@ class ResultsViewController: UIViewController {
         scoreLabel.text = score
         nameLabel.text = name
         descriptionTextView.text = desc
+        
     }
 
     @IBAction func startOverButtonPressed(_ sender: UIButton) {
 //        start again
-        
-        
+ 
         self.dismiss(animated: true, completion: nil)
+        
         
     }
 }

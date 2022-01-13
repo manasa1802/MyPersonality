@@ -25,14 +25,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+//        myQuestionBrain.setNewQuestion()
         updateUI()
     }
 
     @IBAction func optionSelected(_ sender: UIButton) {
         
         if myQuestionBrain.isLastQuestion(){
-            //          load next viewcontroller
-            //          fetch the data to be displayed
+
+            //fetch the data to be displayed, load next viewcontroller
             let myResults = ResultsBrain(Score: myQuestionBrain.getMyScore())
             let results = myResults.getInformationFor(score: myResults.Score)
             
