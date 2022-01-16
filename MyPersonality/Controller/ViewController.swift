@@ -25,7 +25,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-//        myQuestionBrain.setNewQuestion()
         updateUI()
     }
 
@@ -43,7 +42,7 @@ class ViewController: UIViewController {
             nextViewController.score = "Score: \(myResults.Score)"
             nextViewController.name = results.name
             nextViewController.desc = results.description
-            self.present(nextViewController, animated:true, completion:nil)
+            self.show(nextViewController, sender: self)
             
         }else{
             myQuestionBrain.addScore(userChoice: sender.currentTitle!)

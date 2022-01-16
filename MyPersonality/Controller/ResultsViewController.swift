@@ -19,7 +19,6 @@ class ResultsViewController: UIViewController {
     var score = ""
     var name = ""
     var desc = ""
-//    var result : [ResultsModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +33,11 @@ class ResultsViewController: UIViewController {
     }
 
     @IBAction func startOverButtonPressed(_ sender: UIButton) {
-//        start again
- 
-        self.dismiss(animated: true, completion: nil)
+        //        start again
         
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "ViewController") as! ViewController
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
         
     }
 }
